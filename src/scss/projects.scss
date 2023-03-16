@@ -1,0 +1,96 @@
+.projects {
+	padding: rem(40) 0;
+	background-color: $main-color;
+	// .projects__container
+
+	&__container {}
+
+	// .projects__title
+
+	&__title {
+		color: #000;
+		font-size: 32px;
+		text-align: center;
+		margin-bottom: rem(20);
+	}
+
+	// .projects__list
+
+	&__list {}
+}
+
+.projects-list {
+
+	// .projects-list__item
+
+	&__item {
+		border-radius: 10px;
+		display: flex;
+		flex-direction: column;
+		gap: rem(30);
+
+		background: $bg-color;
+
+		width: 33%;
+
+		padding: rem(30) rem(20) rem(50) rem(20);
+
+		@media (max-width:$tablet) {
+			width: 45%;
+		}
+
+		@media (max-width:$mobile) {
+			margin: 0 auto;
+			width: 70%;
+		}
+
+		@media (max-width:$mobileSmall) {
+			width: 90%;
+		}
+	}
+
+	// .projects-list__item-number
+
+	&__item-number {}
+
+	// .projects-list__item-line
+
+	&__item-line {
+		width: 100%;
+		height: 3px;
+		background-color: $main-color;
+	}
+
+	// .projects-list__item-title
+
+	&__item-title {
+		font-size: 21px;
+	}
+
+	// .projects-list__item-price
+
+	&__item-price {
+		color: #014394;
+	}
+
+	// .projects-list__item-button
+
+	&__item-button {
+		background-color: $main-color;
+		display: inline-block;
+		padding: 7px 14px;
+
+		color: #000;
+
+		border-radius: 5px;
+
+		transition: $base-transition;
+
+		@media (min-width:$mobile) {
+			&:hover {
+				background-color: #79911c;
+			}
+		}
+	}
+
+}

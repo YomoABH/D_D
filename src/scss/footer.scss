@@ -1,3 +1,115 @@
 //====================================================================================================
+.footer {
+
+	// .footer__container
+
+	&__container {
+		padding: rem(50) rem(15);
+		display: flex;
+		align-items: center;
+
+		justify-content: space-between;
+
+		@media (max-width:$tablet) {
+			flex-direction: column;
+			gap: 40px;
+		}
+	}
+
+	// .footer__text
+
+	&__text {
+		font-size: 32px;
+		text-align: center;
+
+		@media (max-width:$mobile) {
+			font-size: 24px;
+		}
+	}
+
+	// .footer__animate
+
+	&__animate {}
+}
+
+
+
+.circle {
+	width: rem(200);
+	height: rem(200);
+
+	border-radius: 100%;
+
+	@media (max-width:$mobile) {
+		width: rem(150);
+		height: rem(150);
+
+	}
+}
+
+.circle--blue {
+	position: relative;
+	background-color: #014394;
+	margin-right: 135px;
+}
+
+.circle--animate {
+	position: absolute;
+	left: 60%;
+
+	border: 2px #fff solid;
+	transition: $base-transition;
+
+	@media (min-width:$mobile) {
+		&:hover {
+			background-color: rgba(255, 255, 255, 0.493);
+			cursor: pointer;
+		}
+	}
+
+	&::after {
+		content: '';
+		width: 50%;
+		height: 50%;
+
+		border-radius: 100%;
+
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+
+		background-color: $main-color ;
+	}
+}
+
+.circle__text {
+	animation: rotate 10s linear infinite;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.circle__span {
+	font-size: 11px;
+	position: absolute;
+	top: -93px;
+	text-transform: uppercase;
+	display: inline-block;
+	/*отображать как блочно-строчный*/
+	transform-origin: 0 93px;
+
+	/*откуда начинать трансформацию*/
+	@media (max-width:$mobile) {
+		top: -71px;
+		transform-origin: 0 71px;
+
+	}
+
+	&.invisible {
+		opacity: 0;
+	}
+}
 
 //====================================================================================================
