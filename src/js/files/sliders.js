@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation } from 'swiper';
+import Swiper, { Navigation, Scrollbar, FreeMode } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -27,18 +27,20 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
-	if (document.querySelector('.swiper')) { // Указываем скласс нужного слайдера
+	if (document.querySelector('.portfolio__slider')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
-		new Swiper('.swiper', { // Указываем скласс нужного слайдера
+		new Swiper('.portfolio__slider', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
-			modules: [Navigation],
+			modules: [Navigation, Scrollbar, FreeMode],
 			observer: true,
 			observeParents: true,
-			slidesPerView: 1,
-			spaceBetween: 0,
+			slidesPerView: "auto",
+			spaceBetween: 40,
 			autoHeight: true,
 			speed: 800,
+			allowTouchMove: true,
+			freeMode: true,
 
 			//touchRatio: 0,
 			//simulateTouch: false,
@@ -64,12 +66,12 @@ function initSliders() {
 			*/
 
 			// Скроллбар
-			/*
+
 			scrollbar: {
 				el: '.swiper-scrollbar',
 				draggable: true,
 			},
-			*/
+
 
 			// Кнопки "влево/вправо"
 			navigation: {
@@ -102,6 +104,92 @@ function initSliders() {
 			// События
 			on: {
 
+			}
+		});
+	}
+	if (document.querySelector('.work__slider')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper('.work__slider', { // Указываем скласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [Navigation, Scrollbar, FreeMode],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 40,
+			autoHeight: true,
+			speed: 800,
+			allowTouchMove: true,
+
+			//touchRatio: 0,
+			//simulateTouch: false,
+			//loop: true,
+			//preloadImages: false,
+			//lazy: true,
+
+			/*
+			// Эффекты
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			*/
+
+			// Пагинация
+			/*
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			*/
+
+			// Скроллбар
+
+			// scrollbar: {
+			// 	el: '.swiper-scrollbar',
+			// 	draggable: true,
+			// },
+
+
+			// Кнопки "влево/вправо"
+			navigation: {
+				prevEl: '.swiper-button-prev',
+				nextEl: '.swiper-button-next',
+			},
+
+			// Брейкпоинты
+			/*
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 0,
+					autoHeight: true,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				1268: {
+					slidesPerView: 4,
+					spaceBetween: 30,
+				},
+			},
+			*/
+			// События
+			on: {
+				init: (s) => {
+					let count = document.querySelector('.work__count')
+					count.innerHTML = `${s.realIndex + 1}/${s.slides.length}`
+				},
+				slideChange: (s) => {
+					let count = document.querySelector('.work__count')
+					count.innerHTML = `${s.realIndex + 1}/${s.slides.length}`
+				}
 			}
 		});
 	}

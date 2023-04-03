@@ -1,6 +1,22 @@
 .promo {
 	height: 100vh;
-	padding-top: 20vh;
+	padding-top: 30vh;
+	position: relative;
+
+	&-btn {
+		animation: phoneBtn 2.5s ease infinite;
+		width: rem(110);
+		display: block;
+
+		position: absolute;
+		bottom: rem(20);
+		left: 50%;
+		transform: translate(-50%, 0);
+
+		img {
+			max-width: 100%;
+		}
+	}
 
 	// .promo__container
 

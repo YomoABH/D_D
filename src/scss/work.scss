@@ -1,0 +1,60 @@
+.work {
+	padding: rem(80) 0;
+	background-color: $main-color;
+
+	// .work__slider
+
+	&__slider {}
+
+	// .work__wrapper
+
+	&__wrapper {}
+
+	&__count {
+		padding-bottom: rem(3);
+		border-bottom: 3px #014394 solid;
+		margin-bottom: rem(60);
+	}
+
+	// .work__slide
+
+	&__slide {}
+}
+
+.container {
+
+	// .container__title
+
+	&__title {
+		font-size: rem(32);
+		margin-bottom: rem(30);
+		color: #014394;
+
+		text-align: center;
+	}
+}
+
+.swiper {}
+
+.swiper-wrapper {}
+
+.swiper-slide {
+	// .swiper-slide__title
+
+	&__title {
+		color: #014394;
+		margin-bottom: rem(20);
+		width: 50%;
+		font-size: rem(21);
+		font-weight: 700;
+	}
+
+	// .swiper-slide__txt
+
+	&__txt {
+
+		width: 50%;
+		font-weight: 300;
+		color: #014394;
+	}
+}
